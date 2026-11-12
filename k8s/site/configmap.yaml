@@ -14,5 +14,6 @@ data:
         <h1>Bienvenue sur le site de Gabin GOUDE</h1>
         <p>EFREI - I2 APP RS2 - Atelier Kubernetes 2026</p>
         <p>Servi par Kubernetes (k3d : 1 server + 2 agents).</p>
+        <p>Page mise à jour de façon déclarative : ConfigMap modifiée puis kubectl apply.</p>
       </body>
     </html>
