@@ -22,6 +22,20 @@ spec:
           image: nginx:1.28        # utilisez nginx:1.27 (version précise, pas "latest")
           ports:
             - containerPort: 80    # le port sur lequel nginx écoute
+          # Bonus B : le pod ne reçoit du trafic que lorsque nginx répond sur /
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 2
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 100m
+              memory: 64Mi
           volumeMounts:
             - name: html
               mountPath: /usr/share/nginx/html   # le dossier servi par nginx (cf. exercice 3)
